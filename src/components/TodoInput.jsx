@@ -5,6 +5,7 @@ export const TodoInput = ({ onAdd }) => {
 
   const handleButtonClick = () => {
     const data = {
+      id: content,
       content,
       checked: false,
     };

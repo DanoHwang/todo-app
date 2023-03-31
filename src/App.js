@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './App.css';
 
+import { Header } from './components/Header';
 import { TodoInput } from './components/TodoInput';
 import { TodoList } from './components/TodoList';
 
 function App() {
+  const [ filter, setFilter ] = useState('All');
   const [ todos, setTodos ] = useState([]);
 
   const handleAddClick = (newTodo) => {
@@ -16,10 +18,21 @@ function App() {
     setTodos(newTodos);
   };
 
+  const handleCheck = (id) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) { todo.checked = !todo.checked; }
+
+      return todo;
+    });
+
+    setTodos(updatedTodos);
+  };
+
   return (
     <div className='App'>
       <div className='box'>
-        <TodoList todos={todos} />
+        <Header checked={filter} check={setFilter} />
+        <TodoList todos={todos} onCheck={handleCheck} />
         <TodoInput onAdd={handleAddClick} />
       </div>
     </div>
