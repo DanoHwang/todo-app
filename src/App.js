@@ -28,11 +28,17 @@ function App() {
     setTodos(updatedTodos);
   };
 
+  const handleDelete = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+
+    setTodos(updatedTodos);
+  };
+
   return (
     <div className='App'>
       <div className='box'>
         <Header checked={filter} check={setFilter} />
-        <TodoList todos={todos} onCheck={handleCheck} />
+        <TodoList todos={todos} onCheck={handleCheck} onDelete={handleDelete} />
         <TodoInput onAdd={handleAddClick} />
       </div>
     </div>

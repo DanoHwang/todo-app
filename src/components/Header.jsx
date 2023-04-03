@@ -22,8 +22,8 @@ export const Header = ({ checked, check }) => {
           >
             {filter}
           </button>
-        )
+        );
       })}
     </>
-  )
+  );
 };

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 export const TodoInput = ({ onAdd }) => {
   const [ content, setContent ] = useState("");
 
   const handleButtonClick = () => {
     const data = {
-      id: content,
+      id: uuidv4(),
       content,
       checked: false,
     };
