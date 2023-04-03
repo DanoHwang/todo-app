@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Todo } from './Todo';
 
-export const TodoList = ({ todos, onCheck, onDelete, filter }) => {
+export const TodoList = ({ todos, onCheck, onDelete, filter, isBright }) => {
   const filteredTodos = todos.filter((todo) => {
     if (filter === 'Active') {
       return todo.checked === false;
@@ -23,6 +23,7 @@ export const TodoList = ({ todos, onCheck, onDelete, filter }) => {
           onCheck={onCheck}
           onDelete={onDelete}
           key={todo.id}
+          isBright={isBright}
         />
       ))}
     </div>

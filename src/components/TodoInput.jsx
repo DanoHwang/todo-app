@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-export const TodoInput = ({ onAdd }) => {
+export const TodoInput = ({ onAdd, isBright }) => {
   const [ content, setContent ] = useState("");
 
   const handleButtonClick = () => {
@@ -18,7 +18,7 @@ export const TodoInput = ({ onAdd }) => {
   const handleChange = (e) => setContent(e.target.value);
 
   return (
-    <div className='input-bar__wrapper'>
+    <div className={isBright ? 'input-bar__wrapper input-bar__wrapper--bright' : 'input-bar__wrapper'}>
       <div className='input-bar'>
         <input
           className='input-bar__input'

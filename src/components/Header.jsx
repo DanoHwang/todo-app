@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillSunFill } from 'react-icons/bs';
 
-export const Header = ({ checked, check }) => {
+export const Header = ({ checked, check, isBright, onBright }) => {
   const filters = ['All', 'Active', 'Completed'];
 
   const handleClick = (e) => {
@@ -9,10 +9,17 @@ export const Header = ({ checked, check }) => {
     check(e.target.value);
   };
 
+  const handleIconClick = () => {
+    onBright(!isBright);
+  };
+
   return (
-    <div className='header__box'>
-      <BsFillSunFill className='header__icon' />
-      <div className="header__title__wrapper">
+    <div className={isBright ? 'header__box header__box--bright' : 'header__box'}>
+      <BsFillSunFill
+        className={isBright ? 'header__icon header__icon--bright' : 'header__icon'}
+        onClick={handleIconClick}
+      />
+      <div>
         {filters.map((filter) => {
           const isChecked = checked === filter;
 

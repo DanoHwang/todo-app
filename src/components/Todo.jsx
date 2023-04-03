@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillTrash3Fill } from 'react-icons/bs';
 
-export const Todo = ({ todo, onCheck, onDelete }) => {
+export const Todo = ({ todo, onCheck, onDelete, isBright }) => {
   const handleOnChange = (e) => {
     onCheck(e.target.id);
   };
@@ -11,7 +11,7 @@ export const Todo = ({ todo, onCheck, onDelete }) => {
   }
 
   return (
-    <div className='todo'>
+    <div className={isBright ? 'todo' : 'todo todo--dark'}>
       <div className='todo__checkbox__wrapper'>
         <input
           className='todo__input'

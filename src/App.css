@@ -13,7 +13,7 @@
 
   height: 100vh;
 
-  background-color: bisque;
+  background-color: rgb(63, 65, 78);
 }
 
 .box {
@@ -23,6 +23,10 @@
   width: 30em;
   height: 30em;
   border-radius: 2em 1em;
+  background-color: white;
+}
+
+.box--dark {
   background-color: rgb(27, 46, 68);
 }
 
@@ -33,16 +37,25 @@
   flex-basis: 20%;
 
   padding: 1em 1.2em;
-  background-color: rgb(16, 35, 57);
 
-  border-bottom: 0.1em solid rgb(60, 68, 77);
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
+  background-color: rgb(16, 35, 57);
+  border-bottom: 0.1em solid rgb(60, 68, 77);
+}
+
+.header__box--bright {
+  background-color: rgb(217, 225, 236);
+  border-bottom: 0.1em solid rgb(177, 177, 177);
 }
 
 .header__icon {
   font-size: 1.5em;
   color: white;
+}
+
+.header__icon--bright {
+  color: rgb(0, 0, 0);
 }
 
 .header__title {
@@ -72,6 +85,10 @@
 
   margin-bottom: 0.7em;
   font-size: 1.5em;
+  color: black;
+}
+
+.todo--dark {
   color: white;
 }
 
@@ -91,6 +108,10 @@
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
   background-color: rgb(16, 35, 57);
+}
+
+.input-bar__wrapper--bright {
+  background-color: rgb(217, 225, 236);
 }
 
 .input-bar {

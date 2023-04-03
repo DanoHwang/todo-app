@@ -8,6 +8,7 @@ import { TodoList } from './components/TodoList';
 function App() {
   const [ filter, setFilter ] = useState('All');
   const [ todos, setTodos ] = useState([]);
+  const [ isBright, setIsBright ] = useState(false);
 
   const handleAddClick = (newTodo) => {
     const newTodos = [
@@ -36,10 +37,24 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='box'>
-        <Header checked={filter} check={setFilter} />
-        <TodoList todos={todos} onCheck={handleCheck} onDelete={handleDelete} filter={filter} />
-        <TodoInput onAdd={handleAddClick} />
+      <div className={isBright ? 'box' : 'box box--dark'}>
+        <Header
+          checked={filter}
+          check={setFilter}
+          isBright={isBright}
+          onBright={setIsBright}
+        />
+        <TodoList
+          todos={todos}
+          onCheck={handleCheck}
+          onDelete={handleDelete}
+          filter={filter}
+          isBright={isBright}
+        />
+        <TodoInput
+          onAdd={handleAddClick}
+          isBright={isBright}
+        />
       </div>
     </div>
   );
