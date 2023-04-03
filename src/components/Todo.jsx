@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsFillTrash3Fill } from 'react-icons/bs';
 
 export const Todo = ({ todo, onCheck, onDelete }) => {
   const handleOnChange = (e) => {
@@ -10,25 +11,26 @@ export const Todo = ({ todo, onCheck, onDelete }) => {
   }
 
   return (
-    <div>
-      <input
-        type='checkbox'
-        id={todo.id}
-        value={todo.content}
-        onChange={handleOnChange}
-      />
-      <label
-        htmlFor={todo.id}
-        className={todo.checked ? 'todo--checked' : 'todo--unchecked'}
-      >
-        {todo.content}
-      </label>
-      <button
+    <div className='todo'>
+      <div className='todo__checkbox__wrapper'>
+        <input
+          className='todo__input'
+          type='checkbox'
+          id={todo.id}
+          value={todo.content}
+          onChange={handleOnChange}
+        />
+        <label
+          htmlFor={todo.id}
+          className={todo.checked ? 'todo--checked' : 'todo--unchecked'}
+        >
+          {todo.content}
+        </label>
+      </div>
+      <BsFillTrash3Fill
         id={todo.id}
         onClick={handleButtonClick}
-      >
-        delete
-      </button>
+      />
     </div>
   )
 };

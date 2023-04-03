@@ -16,7 +16,7 @@ export const TodoList = ({ todos, onCheck, onDelete, filter }) => {
   });
 
   return (
-    <>
+    <div className='todos__box'>
       {filteredTodos.map((todo) => (
         <Todo
           todo={todo}
@@ -25,6 +25,6 @@ export const TodoList = ({ todos, onCheck, onDelete, filter }) => {
           key={todo.id}
         />
       ))}
-    </>
+    </div>
   );
 };

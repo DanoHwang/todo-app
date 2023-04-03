@@ -18,13 +18,22 @@ export const TodoInput = ({ onAdd }) => {
   const handleChange = (e) => setContent(e.target.value);
 
   return (
-    <div className='input__bar'>
-      <input
-        type="text"
-        value={content}
-        onChange={handleChange}
-      />
-      <button onClick={handleButtonClick}>Add</button>
+    <div className='input-bar__wrapper'>
+      <div className='input-bar'>
+        <input
+          className='input-bar__input'
+          type='text'
+          value={content}
+          onChange={handleChange}
+          placeholder='Add Todo'
+        />
+        <button
+          className='input-bar__button'
+          onClick={handleButtonClick}
+        >
+          Add
+        </button>
+      </div>
     </div>
   );
 };

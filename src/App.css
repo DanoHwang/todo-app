@@ -1,3 +1,117 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  background-color: bisque;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+
+  width: 30em;
+  height: 30em;
+  border-radius: 2em 1em;
+  background-color: rgb(27, 46, 68);
+}
+
+.header__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 20%;
+
+  padding: 1em 1.2em;
+  background-color: rgb(16, 35, 57);
+
+  border-bottom: 0.1em solid rgb(60, 68, 77);
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.header__icon {
+  font-size: 1.5em;
+  color: white;
+}
+
+.header__title {
+  margin-right: 0.5em;
+
+  font-size: 1.2em;
+  font-weight: bold;
+  color: orange;
+}
+
+.header__title--checked {
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.3em;
+}
+
+.todos__box {
+  flex-basis: 100%;
+
+  padding: 1.2em 1.5em;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 0.7em;
+  font-size: 1.5em;
+  color: white;
+}
+
+.todo__input {
+  margin-right: 1em;
+}
+
+.todo__checkbox__wrapper {
+  flex-basis: 20%;
+}
+
+.input-bar__wrapper {
+  display: flex;
+  flex-basis: 20%;
+
+  padding: 1.2em 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: rgb(16, 35, 57);
+}
+
+.input-bar {
+  display: flex;
+  flex-grow: 1;
+}
+
+.input-bar__input {
+  flex-grow: 4;
+  padding: 0.5em 0.7em;
+  font-size: 1.2em;
+  background-color: white;
+}
+
+.input-bar__button {
+  flex-grow: 1;
+  padding: 0.5em 0.7em;
+  background-color: orange;
+  font-size: 1.2em;
+}
+
 .todo--checked {
   text-decoration: line-through;
 }
