@@ -38,7 +38,7 @@ function App() {
     <div className='App'>
       <div className='box'>
         <Header checked={filter} check={setFilter} />
-        <TodoList todos={todos} onCheck={handleCheck} onDelete={handleDelete} />
+        <TodoList todos={todos} onCheck={handleCheck} onDelete={handleDelete} filter={filter} />
         <TodoInput onAdd={handleAddClick} />
       </div>
     </div>

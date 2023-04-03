@@ -2,10 +2,22 @@ import React from 'react';
 
 import { Todo } from './Todo';
 
-export const TodoList = ({ todos, onCheck, onDelete }) => {
+export const TodoList = ({ todos, onCheck, onDelete, filter }) => {
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === 'Active') {
+      return todo.checked === false;
+    }
+
+    if (filter === 'Completed') {
+      return todo.checked === true;
+    }
+
+    return true;
+  });
+
   return (
     <>
-      {todos.map((todo) => (
+      {filteredTodos.map((todo) => (
         <Todo
           todo={todo}
           onCheck={onCheck}
